@@ -1,0 +1,184 @@
+html{
+    scroll-behavior: smooth;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    width: 100%;
+    height: 324px;
+    background-color: white;
+
+}
+
+.footer-main {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1440px;
+    width: 100%;
+
+}
+
+.footer__brand {
+    max-width: 276px;
+    width: 100%;
+    height: 157px;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    width: 100%;
+    height: 46px;
+}
+
+.logo-img {
+    margin-right: 2px;
+    width: 44px;
+    height: 44px;
+}
+
+.logo-text {
+    width: 77px;
+    height: 20px;
+
+}
+
+.footer__logo-desc {
+    margin-top: 13px;
+    max-width: 276px;
+    width: 100%;
+    height: 48px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #505050;
+}
+
+.logo-social {
+    display: flex;
+    gap: 5px;
+    width: 200px;
+    height: 32px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo-social i:hover {
+    display: flex;
+    transform: scale(1.3);
+    color: #007bff;
+
+}
+.logo-social i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: #BDC4CD;
+    color: white;
+    border-radius: 50%;
+}
+
+.footer__about {
+    max-width: 81px;
+    width: 100%;
+    height: 137px;
+}
+
+.about-heading {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.about__menu {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.footer__partnership {
+    max-width: 81px;
+    width: 100%;
+    height: 137px;
+}
+
+.partnership-heading {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.partnership__menu {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.footer__information,
+.footer__User,
+.footer__get__app {
+    max-width: 81px;
+    width: 100%;
+    height: 137px;
+}
+
+.information-heading,
+.User-heading,
+.get-app__heading {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.information__menu,
+.User__menu {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.menu-list,
+.partnership-list,
+.information-list,
+.User-list {
+    color: #8B96A5;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+footer a:hover{
+    color: #0D6EFD;
+}
+
+.get-app_img {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer__copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: auto;
+    width: 100%;
+    height: 68px;
+    background-color: #DEE2E7;
+}
+
+.copyright-text {
+    color: #606060;
+    font-size: 0.8rem;
+    font-weight: 400;
+
+}

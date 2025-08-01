@@ -1,0 +1,32 @@
+fetch('navbar.html').then(res => res.text()).then(data => document.getElementById("navbar").innerHTML = data);
+fetch('footer.html').then(res => res.text()).then(data => document.getElementById("footer").innerHTML = data);
+fetch('header.html').then(res => res.text()).then(data => {
+  document.getElementById('header').innerHTML = data;
+
+  // Get Product ID from URL
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+  console.log("Product ID:", productId);
+
+  async function fetchProductDetail(id) {
+    try {
+      const response = await fetch(`https://dummyjson.com/products/${id}`);
+      const product = await response.json();
+      console.log("✅ Product fetched:", product);
+      displayProductDetail(product);
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+    }
+  }
+
+  function displayProductDetail(product) {
+    document.getElementById("main-img").src = product.thumbnail;
+    document.getElementById("product-title").innerText = product.title;
+    document.getElementById("product-price").innerText = `$${product.price}`;
+    document.getElementById("item-data").innerText = `${product.category}`;
+  }
+
+  if (productId) {
+    fetchProductDetail(productId);
+  }
+});

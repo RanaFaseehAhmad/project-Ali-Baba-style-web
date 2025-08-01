@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e4c9e30c91.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="list.css">
+    <title>list-items</title>
+</head>
+
+<body>
+    <!-- header  -->
+    <div id="header"></div>
+    <!-- header  -->
+    <!-- navbar  -->
+    <div id="navbar"></div>
+    <!-- navbar  -->
+
+    <div class="main">
+        <div class="sidebar-main-box">
+
+            <div class="sidebar">
+                <div class="sidebar__category">
+                    <div class="category-box">
+                        <h1 class="Category-title">Category</h1>
+                        <i  class="menu-contract    fa-solid fa-caret-up"></i>
+                    </div>
+                    <ul  id="category__menu" class="  category__menu">
+                        <li><a class="category-menu__list" href="">Mobile accessories</a></li>
+                        <li><a class="category-menu__list" href="">Electronics</a></li>
+                        <li><a class="category-menu__list" href="">Smartphones</a></li>
+                        <li><a class="category-menu__list" href="">Modern tech</a></li>
+                        <li><a class="category-menu__list see-all" href="">See all</a></li>
+                    </ul>
+
+                </div>
+                <div class="sidebar__brand">
+                    <div class="brand-box">
+                        <h1 class="brand-title">Brands</h1>
+                        <i  class=" menu-contract  fa-solid fa-caret-up"></i>
+                    </div>
+                    <ul id="brand__menu" class="  brand__menu">
+                        <li><label><input class="brand-menu__list" type="checkbox" name="Brand" value="Mobile">
+                                Samsung</label></li>
+                        <li><label><input class="brand-menu__list" type="checkbox" name="Brand" value="Electronics">
+                                Apple</label></li>
+                        <li><label><input class="brand-menu__list" type="checkbox" name="Brand" value="Smartphones">
+                                Huawei</label></li>
+                        <li><label><input class="brand-menu__list" type="checkbox" name="Brand" value="Smartphones">
+                                Oppo</label></li>
+                        <li><label><input class="brand-menu__list" type="checkbox" name="Brand" value="Smartphones">
+                                Pocco</label></li>
+                        <li><a class="brand-menu__list see-all" href="">See all</a></li>
+
+                    </ul>
+                </div>
+                <div class="sidebar__feature">
+                    <div class="feature-box">
+                        <h1 class="feature-title">Features</h1>
+                        <i  class="menu-contract  fa-solid fa-caret-up"></i>
+                    </div>
+                    <ul id="" class="  feature__menu">
+                        <li><label><input class="feature-menu__list" type="checkbox" name="category" value="Mobile">
+                                Metallic</label></li>
+                        <li><label><input class="feature-menu__list" type="checkbox" name="category"
+                                    value="Electronics">
+                                Plastic cover</label></li>
+                        <li><label><input class="feature-menu__list" type="checkbox" name="category"
+                                    value="Smartphones">
+                                8Gb Ram</label></li>
+                        <li><label><input class="feature-menu__list" type="checkbox" name="category"
+                                    value="Smartphones">Super power</label></li>
+                        <li><label><input class="feature-menu__list" type="checkbox" name="category"
+                                    value="Smartphones">
+                                Large Memory</label></li>
+                        <li><a class="feature-menu__list see-all" href="">See all</a></li>
+
+                    </ul>
+                </div>
+                <div class="sidebar__price-range">
+                    <div class="range-box">
+                        <h1 class="range-title">Price range</h1>
+                        <i  class="menu-contract  fa-solid fa-caret-up"></i>
+                    </div>
+                    <div class="  price-filter">
+                        <label>
+                            Min: <input type="number" id="minPrice" placeholder="0">
+                        </label>
+                        <label>
+                            Max: <input type="number" id="maxPrice" placeholder="1000">
+                        </label>
+                        <button class="filterBtn" id="filterBtn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="sidebar__condition">
+                    <div class="condition-box">
+                        <h1 class="condition-title">Condition</h1>
+                        <i  class="menu-contract  fa-solid fa-caret-up"></i>
+                    </div>
+                    <ul id="" class="  condition__menu">
+                        <li><label><input class="condition-menu__list" type="radio" name="condition" value="Mobile">
+                                Any</label></li>
+                        <li><label><input class="condition-menu__list" type="radio" name="condition" value="Mobile">
+                                Refurbished</label></li>
+                        <li><label><input class="condition-menu__list" type="radio" name="condition" value="Mobile">
+                                Brand new</label></li>
+                        <li><label><input class="condition-menu__list" type="radio" name="condition" value="Mobile">
+                                Old items</label></li>
+
+                    </ul>
+                </div>
+                <div class="sidebar__Rating">
+                    <div class="rating-box">
+                        <h1 class="rating-title">Rating</h1>
+                        <i  class="menu-contract  fa-solid fa-caret-up"></i>
+                    </div>
+                    <ul id="" class="  rating__menu">
+                        <li><label><input class="rating-menu__list" type="checkbox" name="rating" value="Mobile">
+                                <img src="images/list-page/5star.png" alt=""></label></li>
+                        <li><label><input class="rating-menu__list" type="checkbox" name="rating" value="Mobile">
+                                <img src="images/list-page/4star.png" alt=""></label></li>
+                        <li><label><input class="rating-menu__list" type="checkbox" name="rating" value="Mobile">
+                                <img src="images/list-page/3star.png" alt=""></label></li>
+                        <li><label><input class="rating-menu__list" type="checkbox" name="rating" value="Mobile">
+                                <img src="images/list-page/2star.png" alt=""></label></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- sidebar ends -->
+            <div class="main__content">
+
+                <div class="content__top">
+
+
+
+                    <h1 class="item-count__text">1211, items in <b class="bold"> mobile accessories</b></h1>
+
+
+                    <div class="content-leftside">
+
+                        <div><label class="content-leftside__text"><input class="condition-menu__list" type="checkbox"
+                                    name="condition" value="Mobile">
+                                Verified Only</label></div>
+                        <select class="content-leftside__feature" name="" id="">
+                            <option>Featured</option>
+                        </select>
+                        <div class="content__view-change">
+                            <i id="grid-view" class="fa-solid fa-table-cells-large"></i>
+                            <i id="list-view" class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- content top ends  -->
+
+                <div class="filter__applied">
+                    <div class="filter__items">
+
+                        <span class="filter-tag">
+                            Electronics <i class="fa-solid fa-xmark"></i>
+                        </span>
+                        <span class="filter-tag">
+                            Samsung <i class="fa-solid fa-xmark"></i>
+                        </span>
+                        <span class="filter-tag">
+                            Apple <i class="fa-solid fa-xmark"></i>
+                        </span>
+                        <span class="filter-tag">
+                            Oppo <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+
+                    <h1 class="filter__applied-clear">
+                        Clear all filter
+                    </h1>
+                </div>
+                <!-- filter ends  -->
+
+                <div id="main__list" class="main__list ">
+                    <!-- <div class="dummywrapper"></div> -->
+                    <div class="list__item ">
+                        <div class="item-img ">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img ">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list__item ">
+                        <div class="item-img">
+                            <img src="images/list-page/image 33.png" alt="">
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-left">
+
+                                <div class="item__price-info">
+                                    <h1 class="item-price">$99.50</h1>
+                                    <h1 class="item-discount">$99.50</h1>
+                                </div>
+                                <div class="item-review">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="item-desc">
+                                    <a class="item-desc-link" href="itemdetail.html">
+                                        <h1 class="item-desctext">Iphone 12pro 256Gb Red color</h1>
+                                    </a>
+                                    <h1 class="row__item-detail ">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Aspernatur enim architecto, beatae consequuntur perspiciatis corrupti. Labore
+                                        culpa commodi reiciendis nobis temporibus, vero repellendus quam, esse, nemo
+                                        mollitia tenetur dolores non.</h1>
+                                    <a class="view__detail-link" href="itemdetail.html">
+                                        <h1 class="row__item-view-detail">View details</h1>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="item-favourate">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- newsletter  -->
+        <!-- <div class="newsletter-footer-no-gap"> -->
+
+        <div class="section__newsletter">
+            <div class="newsletter__box">
+                <h1 class="newsletter-title">Subscribe on Our newsletter</h1>
+                <p class="newsletter-info">Get daily news on upcoming offers from many suppliers all over the world
+                </p>
+                <form class="newsletter__form" action="">
+                    <div class="newsletter__icon-input">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input class="newsletter__inputEmail" type="email" placeholder="Email">
+                    </div>
+                    <button class="newsletter__btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!-- footer   -->
+
+        <footer id="footer"></footer>
+        <!-- </div> -->
+    </div>
+    <script src="list.js"></script>
+    <script src="header.js"></script>
+</body>
+
+</html>
