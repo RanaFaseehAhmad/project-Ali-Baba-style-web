@@ -113,13 +113,15 @@ fetch('header.html')
         currentView = "list";
         gridView.style.backgroundColor = "white";
         listView.style.backgroundColor = "#EFF2F4";
+        mainList.classList.add("list-layout"); // <-- key line
       } else if (e.target.id === "grid-view") {
         currentView = "grid";
         listView.style.backgroundColor = "white";
         gridView.style.backgroundColor = "#EFF2F4";
+        mainList.classList.remove("list-layout"); // <-- back to grid
       }
 
-      // Re-render products in the new layout
+      // re-render current products
       const currentProducts = Array.from(mainList.children).map(item => ({
         id: item.querySelector(".view__detail-link").href.split("id=")[1],
         title: item.querySelector(".item-desctext").innerText,
@@ -130,5 +132,6 @@ fetch('header.html')
 
       displayProducts(currentProducts);
     });
+
 
   });
