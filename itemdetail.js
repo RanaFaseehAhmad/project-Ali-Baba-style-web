@@ -7,6 +7,11 @@ fetch('header.html').then(res => res.text()).then(data => {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
   console.log("Product ID:", productId);
+  document.getElementById("cartbtn").addEventListener("click", () => {
+  if (productId) {
+    window.location.href = `cart.html?id=${productId}`;
+  }
+});
 
   async function fetchProductDetail(id) {
     try {
@@ -14,12 +19,14 @@ fetch('header.html').then(res => res.text()).then(data => {
       const product = await response.json();
       console.log("✅ Product fetched:", product);
       displayProductDetail(product);
+
     } catch (error) {
       console.error("Error fetching product details:", error);
     }
   }
 
   function displayProductDetail(product) {
+    document.getElementById("img-gallery").style.display = "none"
     document.getElementById("main-img").src = product.thumbnail;
     document.getElementById("product-title").innerText = product.title;
     document.getElementById("product-price").innerText = `$${product.price}`;
