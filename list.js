@@ -31,45 +31,78 @@ fetch('header.html')
         menu.classList.toggle("show");
       });
     });
+    // mobile view show search field 
+    const navbarSearchMobileView = document.getElementById("navbar-search__mobile-view")
+    const categoryListMobileView = document.querySelectorAll(".category-list__mobile-view")
 
-    // Search button
-    searchBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const input = inputSearchField.value.trim();
-      if (!input) {
+    categoryListMobileView.forEach(cl => {
+      cl.addEventListener("click", () => {
+        const liststext = cl.textContent
+        navbarSearchMobileView.value = liststext
+        console.log(navbarSearchMobileView.value)
+      });
+    })
+    const searchInput = document.getElementById("input__search-form")
+    const searchbtn = document.getElementById("search-form__btn")
+    const navbarSearchFormBtn = document.getElementById("navbar-search-form__btn")
+    const dummyWrapper = document.querySelector(".dummy-wrapper");
+    const resultWrapper = document.querySelector(".result-wrapper");
+
+
+ const dropdownMenu = document.getElementById("dropdown-menu")
+
+    searchbtn.addEventListener("click", handleClick);
+    navbarSearchFormBtn.addEventListener("click", handleClick);
+
+    function handleClick(e) {
+      e.preventDefault()
+      dropdownMenu.classList.remove("show");
+      let input = searchInput.value.trim()
+      let navbarsearchinput = navbarSearchMobileView.value.trim()
+      // we use this  if/else so that it clear the memory. 
+      // without this the mobile view do not search again the different category after you come back from desktop view again due to previous search in memory
+      if (e.target.id === "search-form__btn") {
+        navbarSearchMobileView.value = "";
+        navbarsearchinput = "";
+      } else if (e.target.id === "navbar-search-form__btn") {
+        searchInput.value = "";
+        input = "";
+      }
+      const category = input || navbarsearchinput;
+      if (!category) {
         alert("Enter a category like 'smartphones' or 'laptops'");
         return;
       }
-      fetchProducts(input);
-    });
+      fetchProducts(category);
+    };
 
-    // Fetch products by category
-    async function fetchProducts(category) {
-      try {
-        const response = await fetch(`https://dummyjson.com/products/category/${category}`);
-        const result = await response.json();
-        console.log(result);
+// Fetch products by category
+async function fetchProducts(category) {
+  try {
+    const response = await fetch(`https://dummyjson.com/products/category/${category}`);
+    const result = await response.json();
+    console.log(result);
 
-        if (result.products && result.products.length > 0) {
-          displayProducts(result.products);
-          itemCountItem.innerHTML = `${result.products.length} items in <b class="bold">${category}</b>`;
-        } else {
-          alert("No products found! Showing default dummy items.");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+    if (result.products && result.products.length > 0) {
+      displayProducts(result.products);
+      itemCountItem.innerHTML = `${result.products.length} items in <b class="bold">${category}</b>`;
+    } else {
+      alert("No products found! Showing default dummy items.");
     }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
 
-    // Display products in current view
-    function displayProducts(products) {
-      mainList.innerHTML = "";
+// Display products in current view
+function displayProducts(products) {
+  mainList.innerHTML = "";
 
-      products.forEach(product => {
-        const item = document.createElement("div");
-        item.className = currentView === "grid" ? "list__item" : "list__item__row-view";
+  products.forEach(product => {
+    const item = document.createElement("div");
+    item.className = currentView === "grid" ? "list__item" : "list__item__row-view";
 
-        item.innerHTML = `
+    item.innerHTML = `
           <div class="${currentView === "grid" ? "item-img" : "row__item-img"}">
             <img src="${product.thumbnail}" alt="${product.title}">
           </div>
@@ -103,35 +136,35 @@ fetch('header.html')
           </div>
         `;
 
-        mainList.appendChild(item);
-      });
-    }
+    mainList.appendChild(item);
+  });
+}
 
-    // Grid/List Toggle
-    viewChange.addEventListener("click", (e) => {
-      if (e.target.id === "list-view") {
-        currentView = "list";
-        gridView.style.backgroundColor = "white";
-        listView.style.backgroundColor = "#EFF2F4";
-        mainList.classList.add("list-layout"); // <-- key line
-      } else if (e.target.id === "grid-view") {
-        currentView = "grid";
-        listView.style.backgroundColor = "white";
-        gridView.style.backgroundColor = "#EFF2F4";
-        mainList.classList.remove("list-layout"); // <-- back to grid
-      }
+// Grid/List Toggle
+viewChange.addEventListener("click", (e) => {
+  if (e.target.id === "list-view") {
+    currentView = "list";
+    gridView.style.backgroundColor = "white";
+    listView.style.backgroundColor = "#EFF2F4";
+    mainList.classList.add("list-layout"); // <-- key line
+  } else if (e.target.id === "grid-view") {
+    currentView = "grid";
+    listView.style.backgroundColor = "white";
+    gridView.style.backgroundColor = "#EFF2F4";
+    mainList.classList.remove("list-layout"); // <-- back to grid
+  }
 
-      // re-render current products
-      const currentProducts = Array.from(mainList.children).map(item => ({
-        id: item.querySelector(".view__detail-link").href.split("id=")[1],
-        title: item.querySelector(".item-desctext").innerText,
-        price: parseFloat(item.querySelector(".item-price").innerText.replace("$", "")),
-        description: item.querySelector(".row__item-detail").innerText,
-        thumbnail: item.querySelector("img").src
-      }));
+  // re-render current products
+  const currentProducts = Array.from(mainList.children).map(item => ({
+    id: item.querySelector(".view__detail-link").href.split("id=")[1],
+    title: item.querySelector(".item-desctext").innerText,
+    price: parseFloat(item.querySelector(".item-price").innerText.replace("$", "")),
+    description: item.querySelector(".row__item-detail").innerText,
+    thumbnail: item.querySelector("img").src
+  }));
 
-      displayProducts(currentProducts);
-    });
+  displayProducts(currentProducts);
+});
 
 
   });

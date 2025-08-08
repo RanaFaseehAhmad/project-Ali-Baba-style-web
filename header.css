@@ -13,6 +13,12 @@
     border-bottom: 1px solid #DEE2E7;
 }
 
+.header-left {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
 .brand__logo {
     display: flex;
     align-items: center;
@@ -21,9 +27,11 @@
 
 }
 
-.brand__logo .menubar {
-    display: none;
+.brand__logo .logo {
+    display: flex;
+    align-items: center;
 }
+
 
 .brand__logo-symbol {
     width: 44px;
@@ -35,6 +43,11 @@
 .brand__logo-img {
     width: 77px;
     height: 21.1px;
+}
+
+.mobile-view__menu .menubar {
+    display: none;
+    /* margin-right: 10px; */
 }
 
 .search-form {
@@ -108,18 +121,46 @@
     padding: 5px;
 }
 
+.dropdown-menu__mobile-view {
+    display: none;
+
+
+}
+
+.dropdown-menu__mobile-view.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #DEE2E7;
+    position: absolute;
+    top: 70px;
+    max-width: 160px;
+    width: 100%;
+    padding: 5px;
+    z-index: 1;
+
+}
+
 .dropdown-menu.show {
     display: flex;
 }
 
+.dropdown-menu__mobile-view.show {
+    display: flex;
+}
+
 .mens-category-list,
-.womens-category-list {
+.womens-category-list,
+.mens-category-list__mobile-view,
+.womens-category-list__mobile-view {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 30px;
     list-style: none;
     padding: 5px;
+    color: black;
 }
 
 
@@ -128,19 +169,34 @@
     background-color: #d3e3fd;
     border-radius: 6px;
 }
+
+.womens-category-list__mobile-view:hover {
+    display: flex;
+    background-color: #d3e3fd;
+    border-radius: 6px;
+}
+
 .mens-category-list:hover {
     display: flex;
     background-color: #d3e3fd;
     border-radius: 6px;
 }
 
-.category-list {
+.mens-category-list__mobile-view:hover {
+    display: flex;
+    background-color: #d3e3fd;
+    border-radius: 6px;
+}
+
+.category-list,
+.category-list__mobile-view {
     display: flex;
     align-items: center;
     list-style: none;
     height: 30px;
     padding: 5px;
     cursor: pointer;
+    color: black;
 
 }
 
@@ -149,7 +205,13 @@
     border-radius: 6px;
 }
 
-.mens-extend-menu {
+.category-list__mobile-view:hover {
+    background-color: #d3e3fd;
+    border-radius: 6px;
+}
+
+.mens-extend-menu,
+.mens-extend-menu__mobile-view {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -167,7 +229,12 @@
     display: flex;
 }
 
-.womens-extend-menu {
+.mens-extend-menu__mobile-view.show {
+    display: flex;
+}
+
+.womens-extend-menu,
+.womens-extend-menu__mobile-view {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -181,6 +248,10 @@
 }
 
 .womens-extend-menu.show {
+    display: flex;
+}
+
+.womens-extend-menu__mobile-view.show {
     display: flex;
 }
 
@@ -231,10 +302,10 @@
     cursor: pointer;
 }
 
-.action .cart,
-.person {
+.action__mobile-menu {
     display: none;
 }
+
 
 .header__menubar-menu {
     display: none;
@@ -254,11 +325,64 @@
 }
 
 
+@media only screen and (max-width:635px) {
+    .search-form {
+        display: none;
+        max-width: 430px;
+        width: 100%;
+    }
+
+    .input-group-category {
+        max-width: 150px;
+    }
+
+    .action {
+        display: none;
+    }
+
+    .action__mobile-menu {
+        display: flex;
+    }
+
+    
+}
+
+@media only screen and (min-width: 635px) and (max-width: 768px) {
+    .mobile-view__menu .menubar {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 635px) and (max-width: 1047px) {
+    .action {
+        display: none;
+    }
+
+    .action__mobile-menu {
+        display: flex;
+    }
+
+    .search-form {
+        display: flex;
+        max-width: 430px;
+        width: 100%;
+    }
+
+    .input-group-category {
+        max-width: 150px;
+    }
+
+    .mobile-view__menu{
+        display: none;
+    }
+
+}
+
 @media only screen and (max-width: 768px) {
     header {
         padding: 5px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         max-width: 100%;
         min-width: 180px;
         border: none;
@@ -271,13 +395,12 @@
 
     }
 
-    .header__menubar-menu,
-    li {
+    .header__menubarlist {
         background-color: #f7fafc;
         padding: 7px;
     }
 
-    .header__menubar-menu li:hover {
+    .header__menubarlist:hover {
         background-color: #d0e3fd;
         border-radius: 6px;
     }
@@ -287,13 +410,12 @@
         color: black;
     }
 
-    .brand__logo .menubar {
-        display: block;
-    }
 
-    .menubar {
+    .mobile-view__menu .menubar {
+        display: block;
         margin-right: 5px;
     }
+
 
     .brand__logo .brand__logo-symbol {
         width: 34px;
@@ -312,88 +434,4 @@
         width: 24px;
     }
 
-    .search-form {
-        display: none;
-
-    }
-
-    .action {
-        display: flex;
-        justify-content: flex-end;
-        gap: 24px;
-    }
-
-
-    .action .cart,
-    .action .person {
-        display: flex;
-        width: 24px;
-        height: 24px;
-    }
-
-    .action img:nth-child(-n+4) {
-        display: none;
-    }
-
-    .navbar {
-        display: block;
-        margin: 8px auto;
-        width: 70%;
-        max-width: 547px;
-        height: auto;
-        border: none;
-
-    }
-
-    .navbar .nav-menu,
-    .navbar .navbar__detail {
-        display: none;
-    }
-
-
-    .navbar__input-group {
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #DEE2E7;
-        width: 100%;
-        height: 40px;
-        border-radius: 6px;
-        background-color: #f7fafc;
-
-    }
-
-    .navbar__quik-menu {
-        display: flex;
-        width: 100%;
-        max-width: 768px;
-        height: 36px;
-        border-radius: 6px;
-        gap: 5px;
-        padding: 0 5px;
-
-    }
-
-    .navbar__quik-menu li {
-        border-radius: 6px;
-        list-style: none;
-    }
-
-    .quik-menu__list {
-        font-weight: 500;
-        text-decoration: none;
-        color: #0D6EFD;
-        font-size: clamp(0.7rem, 2vw, 1.5rem);
-    }
-
-    .navinput-group__input {
-        display: flex;
-        width: 100%;
-        height: 19px;
-        font-size: 14px;
-        border: none;
-        outline: none;
-        padding: 5px;
-        background-color: transparent;
-    }
 }

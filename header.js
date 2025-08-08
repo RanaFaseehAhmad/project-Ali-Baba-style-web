@@ -18,9 +18,13 @@ function initHeaderScripts() {
         console.log("click")
 
     })
-     document.addEventListener("click", (e) => {
-        if (!dropdownMenu.contains(e.target) && !dropdownIcon.contains(e.target)) {
-            dropdownMenu.classList.remove("show");
+    document.addEventListener("click", (e) => {
+        if (
+            dropdownMenu.classList.contains('show') && // the menu is open
+            !dropdownIcon.contains(e.target) &&             // the click is NOT on the menu icon
+            !dropdownMenu.contains(e.target)           // the click is NOT inside the menu
+        ) {
+            dropdownMenu.classList.remove('show');     // then close it
         }
     })
     mensDropDownLI.addEventListener("mouseenter", () => {
@@ -29,7 +33,7 @@ function initHeaderScripts() {
     })
     mensDropdownMenu.addEventListener("mouseleave", () => {
         // change toggle to remove 
-        mensDropdownMenu.classList.remove("show")    
+        mensDropdownMenu.classList.remove("show")
     })
 
 
@@ -54,6 +58,49 @@ function initHeaderScripts() {
 
 
 
+    // for mobile vew 
 
+    const mensMobileViewDropDownLI = document.getElementById("mens-dropdown__mobile-view")
+
+    const womensDropDownIconMobileView = document.getElementById("womens-dropdown__mobile-view")
+    const womensDropdownMenuMobileView = document.getElementById("womens-extend-menu__mobile-view")
+    const mensDropdownMenuMobileView = document.getElementById("mens-extend-menu__mobile-view")
+    const dropdownMenuMobileView = document.getElementById("dropdown-menu__mobile-view")
+    const menuBarMobileView = document.getElementById("menubar__mobile-view")
+
+
+
+
+
+    menuBarMobileView.addEventListener("click", () => {
+        dropdownMenuMobileView.classList.toggle("show")
+    })
+    mensMobileViewDropDownLI.addEventListener("mouseenter", () => {
+        mensDropdownMenuMobileView.classList.add("show")
+        womensDropdownMenuMobileView.classList.remove("show")
+    })
+    mensDropdownMenuMobileView.addEventListener("mouseleave", () => {
+        
+        mensDropdownMenuMobileView.classList.remove("show")
+    })
+
+    womensDropDownIconMobileView.addEventListener("mouseenter", () => {
+        womensDropdownMenuMobileView.classList.add("show")
+        mensDropdownMenuMobileView.classList.remove("show")
+
+    })
+    womensDropdownMenuMobileView.addEventListener("mouseleave", () => {
+        womensDropdownMenuMobileView.classList.remove("show")
+    })
+    document.addEventListener('click', (e) => {
+        // If the menu is open and the click is outside the menu
+        if (
+            dropdownMenuMobileView.classList.contains('show') && // the menu is open
+            !menuBarMobileView.contains(e.target) &&             // the click is NOT on the menu icon
+            !dropdownMenuMobileView.contains(e.target)           // the click is NOT inside the menu
+        ) {
+            dropdownMenuMobileView.classList.remove('show');     // then close it
+        }
+    });
 
 }

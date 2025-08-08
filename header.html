@@ -12,26 +12,60 @@
 <body>
 
     <div class="header">
-        <a href="index.html">
+<div class="header-left">
 
-            <div class="brand__logo">
-                <img class="menubar" src="images/navbar/menu.png" alt="">
+    <div class="brand__logo">
+        <a class="logo" href="index.html">
                 <img class="brand__logo-symbol" src="images/brand/logo-symbol.png" alt="">
                 <img class="brand__logo-img" src="images/brand/Brand.png" alt="">
-            </div>
-        </a>
+            </a>
+        </div>
+        <div class="mobile-view__menu">
 
+            <img id="menubar__mobile-view" class="menubar" src="images/navbar/menu.png" alt="">
+            
+            <ul id="dropdown-menu__mobile-view" class="dropdown-menu__mobile-view">
+                <li id="mens-dropdown__mobile-view" class="mens-category-list__mobile-view">Men's wear
+                    <i class="fa-solid fa-angle-right"></i>
+
+                    <ul id="mens-extend-menu__mobile-view" class="mens-extend-menu__mobile-view">
+                        <li class="category-list__mobile-view">mens-shirts</li>
+                        <li class="category-list__mobile-view">mens-shoes</li>
+                        <li class="category-list__mobile-view">mens-watches</li>
+                    </ul>
+                </li>
+                <li id="womens-dropdown__mobile-view" class="womens-category-list__mobile-view">Women's wear
+                    <i class="fa-solid fa-angle-right"></i>
+                    <ul id="womens-extend-menu__mobile-view" class="womens-extend-menu__mobile-view">
+                        <li class="category-list__mobile-view">womens-dresses</li>
+                        <li class="category-list__mobile-view">womens-jewellery</li>
+                        <li class="category-list__mobile-view">womens-shoes</li>
+                        <li class="category-list__mobile-view">womens-watches</li>
+                        <li class="category-list__mobile-view">womens-bags</li>
+                    </ul>
+                </li>
+                <li class="category-list__mobile-view">smartphones</li>
+                <li class="category-list__mobile-view">laptops</li>
+                <li class="category-list__mobile-view">furniture</li>
+                <li class="category-list__mobile-view">fragrances</li>
+                <li class="category-list__mobile-view">groceries</li>
+                <li class="category-list__mobile-view">home-decoration</li>
+            </ul>
+            
+        </div>
+
+    </div>
         <form class="search-form">
             <div class="input-group">
                 <input id="input__search-form" class="input-group__input" type="text" placeholder="Search"
-                    aria-label="Search query" required>
+                aria-label="Search query" required>
             </div>
             <div class="input-group-category">
                 <div class="dropdown__menu-box">
                     <h1 class="category-heading">All categories</h1>
                     <i id="drop-down-icon" class="fa-solid fa-caret-down"></i>
                 </div>
-
+                
                 <ul id="dropdown-menu" class="dropdown-menu">
                     <li id="mens-dropdown" class="mens-category-list">Men' wear
                         <i class="fa-solid fa-angle-right"></i>
@@ -79,26 +113,33 @@
             <a href="cart.html">
                 <img src="images/action/Cart.png" alt="">
             </a>
-            <a href="cart.html">
-            </a> <img class="cart" src="images/action/shopping_cart.png" alt="">
-
-            <img class="person" src="images/action/person.png" alt="">
-
         </div>
+        <div class="action__mobile-menu">
+
+            <a href="cart.html">
+                <img class="cart" src="images/action/shopping_cart.png" alt="">
+
+            </a>
+            <a href="">
+                <img class="person" src="images/action/person.png" alt="">
+
+            </a>
+        </div>
+
 
     </div>
     <ul class="header__menubar-menu">
-        <li><a class="menubar__list" href="">SmartPhones</a></li>
-        <li><a class="menubar__list" href="">Clothes and wear</a></li>
-        <li><a class="menubar__list" href="">Home interior</a></li>
-        <li><a class="menubar__list" href="">computer and tech</a></li>
-        <li><a class="menubar__list" href="">Tools, equipments</a></li>
-        <li><a class="menubar__list" href="">Sports and outdoor</a></li>
-        <li><a class="menubar__list" href="">Animal and pets</a></li>
-        <li><a class="menubar__list" href="">Machinery tools</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">SmartPhones</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">Clothes and wear</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">Home interior</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">computer and tech</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">Tools, equipments</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">Sports and outdoor</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">Animal and pets</a></li>
+        <li class="header__menubarlist"><a class="menubar__list" href="">Machinery tools</a></li>
     </ul>
 
-   <script src="header.js"></script>
+    <script src="header.js"></script>
 
 </body>
 

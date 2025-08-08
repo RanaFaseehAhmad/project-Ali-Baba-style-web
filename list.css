@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     background-color: #f7fafc;
-    margin-top: 64px;
+    /* margin-top: 64px; */
 }
 
 .sidebar-main-box {
@@ -89,7 +89,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     gap: 20px;
     padding: 20px 5px 0 5px;
-    display: none;
+    display: flex;
 }
 
 .category__menu.show,
@@ -99,7 +99,7 @@ body::-webkit-scrollbar {
 .rating__menu.show,
 .price-filter.show {
     /* display: none; */
-    display: flex;
+    display: none;
 }
 
 
@@ -155,12 +155,9 @@ body::-webkit-scrollbar {
     border-bottom: 1px solid #DEE2E7;
 }
 
-/* .sidebar__price-range {
-    height: 208px !important;
-} */
 
 .price-filter {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 60px;
@@ -558,4 +555,96 @@ body::-webkit-scrollbar {
     color: white;
     cursor: pointer;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1040px) {
+    .main__list {
+        max-width: 926px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 5px 0;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content__top {
+        justify-content: space-around;
+    }
+
+    .filter__applied {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+
+    .main__list {
+        max-width: 926px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .item-count__text {
+        font-size: 0.8rem;
+    }
+
+    .content-leftside__text {
+        display: none;
+    }
+
+    .content-leftside__feature {
+        display: flex;
+        align-items: center;
+        width: 80px;
+        height: 38px;
+    }
+
+    .filter__applied-clear {
+        display: none;
+    }
+
+    .content__view-change {
+        display: flex;
+        align-items: center;
+        width: 60px;
+        height: 38px;
+    }
+
+    .row__item-detail {
+        display: none !important;
+    }
+
+}
+
+@media only screen and (max-width: 470px) {
+    .newsletter__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .newsletter__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    .filter__items .filter-tag:nth-child(3),
+    .filter__items .filter-tag:nth-child(4) {
+        display: none;
+    }
 }

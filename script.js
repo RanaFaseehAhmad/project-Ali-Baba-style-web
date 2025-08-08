@@ -18,62 +18,50 @@ fetch('header.html')
     initHeaderScripts()
     // script for dropdown header  
 
-    // const dropdownIcon = document.getElementById("drop-down-icon")
     const dropdownMenu = document.getElementById("dropdown-menu")
-    // dropdownIcon.addEventListener("click", () => {
-    //   dropdownMenu.classList.toggle("show")
-    //   console.log("click")
-
-    // })
-
-    // const mensDropDownLI = document.getElementById("mens-dropdown")
-    // const mensDropdownMenu = document.getElementById("mens-extend-menu")
-    // mensDropDownLI.addEventListener("mouseenter", () => {
-    //   mensDropdownMenu.classList.add("show")
-    //   womensDropdownMenu.classList.remove("show")
-    // })
-    // mensDropdownMenu.addEventListener("mouseleave", () => {
-    //   mensDropdownMenu.classList.toggle("show")
-    // })
 
 
-    // const womensDropDownIcon = document.getElementById("womens-dropdown")
-    // const womensDropdownMenu = document.getElementById("womens-extend-menu")
 
-    // womensDropDownIcon.addEventListener("mouseenter", () => {
-    //   womensDropdownMenu.classList.add("show")
-    //   mensDropdownMenu.classList.remove("show")
+    const navbarSearchMobileView = document.getElementById("navbar-search__mobile-view")
+    const categoryListMobileView = document.querySelectorAll(".category-list__mobile-view")
 
-    // })
-    // womensDropdownMenu.addEventListener("mouseleave", () => {
-    //   womensDropdownMenu.classList.remove("show")
-    // })
-
-    // // script for select product and show on searchfield
-
-    // const categoryList = document.querySelectorAll(".category-list")
-
-    // categoryList.forEach(cl => {
-    //     cl.addEventListener("click", () => {
-    //     const liststext = cl.textContent
-    //     searchInput.value = liststext
-    //   });
-    // })
-
-    // 
-
-
+    categoryListMobileView.forEach(cl => {
+      cl.addEventListener("click", () => {
+        const liststext = cl.textContent
+        navbarSearchMobileView.value = liststext
+        console.log(navbarSearchMobileView.value)
+      });
+    })
 
     const searchInput = document.getElementById("input__search-form")
     const searchbtn = document.getElementById("search-form__btn")
+    const navbarSearchFormBtn = document.getElementById("navbar-search-form__btn")
     const dummyWrapper = document.querySelector(".dummy-wrapper");
     const resultWrapper = document.querySelector(".result-wrapper");
 
-    searchbtn.addEventListener("click", (e) => {
+
+
+
+
+    searchbtn.addEventListener("click", handleClick);
+    navbarSearchFormBtn.addEventListener("click", handleClick);
+
+    function handleClick(e) {
       e.preventDefault()
       dropdownMenu.classList.remove("show");
       let input = searchInput.value.trim()
-      if (!input) {
+      let navbarsearchinput = navbarSearchMobileView.value.trim()
+      // we use this  if/else so that it clear the memory. 
+      // without this the mobile view do not search again the different category after you come back from desktop view again due to previous search in memory
+      if (e.target.id === "search-form__btn") {
+        navbarSearchMobileView.value = "";
+        navbarsearchinput = "";
+      } else if (e.target.id === "navbar-search-form__btn") {
+        searchInput.value = "";
+        input = "";
+      }
+      const category = input || navbarsearchinput;
+      if (!category) {
         console.log("search field cannot be empty")
         dummyWrapper.style.display = "flex";
         resultWrapper.style.display = "none";
@@ -87,7 +75,7 @@ fetch('header.html')
         const showdata = async () => {
           try {
             console.log("fetching data...")
-            const response = await fetch(`https://dummyjson.com/products/category/${input}`)
+            const response = await fetch(`https://dummyjson.com/products/category/${category}`)
             // const response = await fetch(`https://dummyjson.com/products/category/search?q=${input}`)
             const result = await response.json()
             console.log(result)
@@ -102,15 +90,19 @@ fetch('header.html')
           <p>${prd.title}</p>
           <span class="discount">${prd.discountPercentage}%</span>
           </div>
-  `;
+          `;
             });
           } catch (error) {
             console.log("error", error)
           }
+
         }
+
         showdata()
+        // navbarsearchinput = "";
       }
-    })
+    }
+    // )
   });
 
 
