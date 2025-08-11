@@ -44,27 +44,33 @@ fetch('header.html')
       const cartItem = document.createElement("div");
       cartItem.classList.add("cart__item");
       cartItem.innerHTML = `
+       <div class="item-img__item-main-box">
         <div class="item-img">
             <img src="${product.thumbnail}" alt="${product.title}">
         </div>
         <div class="item-main">
-            <div class="item-desc">
+        <div class="item-desc">
+            <h1 class="item-price__mobile-view">$${product.price}</h1>
                 <h1 class="item-title">${product.title}</h1>
                 <h1 class="item-size">Category: ${product.category}, Brand: ${product.brand || 'N/A'}</h1>
                 <h1 class="seller-name">Seller: ${product.brand || 'Unknown Seller'}</h1>
             </div>
-            <div class="buttons">
-                <button class="remove-item-btn">Remove</button>
-                <button class="save-item-btn">Save for later</button>
-            </div>
+           
+      </div>
         </div>
         <div class="item-amount">
-            <h1 class="item-price">$${product.price}</h1>
-            <div class="quantity">
-                <label for="item-quantity">Quantity</label>
-                <input class="item-quantity" name="item-quantity" type="number" value="1" placeholder="Qty: 1">
-            </div>
+        <div class="quantity__price-box">
+        <h1 class="item-price">$${product.price}</h1>
+        <div class="quantity">
+        <label for="item-quantity">Quantity</label>
+        <input class="item-quantity" name="item-quantity" type="number" value="1" placeholder="Qty: 1">
         </div>
+            </div>
+            <div class="buttons">
+               <button class="remove-item-btn">Remove</button>
+               <button class="save-item-btn">Save for later</button>
+           </div>
+         </div>
       `;
       const itemQuantity = cartItem.querySelector(".item-quantity");
 

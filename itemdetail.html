@@ -25,10 +25,11 @@
                     <img src="images/item-detail page/image 39.png" alt="">
                     <img src="images/item-detail page/image 40.png" alt="">
                 </div>
-
+                
             </div>
-
+            
             <!-- info-content   -->
+          
             <div class="info__content">
                 <span class="item-available">
                     <i class="fa-solid fa-check"></i>
@@ -51,6 +52,13 @@
                     <div class="sold">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <p>154 sold</p>
+                    </div>
+                </div>
+                <div class=" buttonbox">
+                    <button id="button__cartbtn" class="addtocartbtn">Add to cart</button>
+                    <div class="save-for-later">
+                        <i class="fa-regular fa-heart"></i>
+                        <h1 class="save-text">Save for later</h1>
                     </div>
                 </div>
                 <div class="trade-price">
@@ -100,6 +108,7 @@
                             <h1 class="item-data">10 days return warrenty</h1>
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -132,31 +141,35 @@
                         <button class="seller__profile-btn">Seller's profile</button>
                     </div>
                 </div>
-                <div class="save-for-later">
-                    <i class="fa-regular fa-heart"></i>
-                    <h1 class="save-text">Save for later</h1>
-                </div>
-                <!-- <a href="cart.html"> -->
+                <div class="btn-cart">
 
-                    <button id="cartbtn" class="addtocartbtn">Add to cart</button>
-                <!-- </a> -->
-            </div>
+                    <div class="save-for-later">
+                        <i class="fa-regular fa-heart"></i>
+                        <h1 class="save-text">Save for later</h1>
+                    </div>
+                    <!-- <a href="cart.html"> -->
+                        
+                        <button id="cartbtn" class="addtocartbtn">Add to cart</button>
+                    <!-- </a> -->
+                    </div>
+           
         </div>
-
+</div>
         <!-- block description  -->
         <div class="main2">
 
             <div class="block__description">
                 <div class="description__nav">
                     <ul class="description__menu ">
-                        <li>Description</li>
+                        <li id="about-item-desc">Description</li>
                         <li>Reviews</li>
                         <li>Shipping</li>
-                        <li>About seller</li>
+                        <li id="about-seller-title">About seller</li>
                     </ul>
                 </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda veritatis, iste voluptates ea
+                <div id="description" class="description">
+                    <p id="description-text" class="description-text">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Assumenda veritatis, iste voluptates ea
                         commodi cupiditate sed quibusdam itaque. Adipisci error magnam ullam enim tenetur, sit accusamus
                         impedit quas tempora deleniti.
                         Porro dignissimos reiciendis molestiae architecto sint, natus consequatur veritatis
@@ -168,6 +181,29 @@
                         sunt ratione fuga optio nisi culpa delectus nulla veritatis corporis deleniti quae, ad eius ut
                         nihil
                         fugiat nesciunt enim!</p>
+                </div>
+                <div id="about-seller-desc" class="about-seller">
+                    <div class="seller-heading">
+                        <img class="seller-profile-pic" src="images/action/Profile.png" alt="seller picture">
+                        <h1 id="sel-name" class="sel-name">Rajpoot Trading LLC</h1>
+                    </div>
+                    <div class="seller-furthur-info">
+                        <div class="about-seller__location">
+                            <img src="images/item-detail page/Flag-Germany.png" alt="Flag">
+                            <h1 class="about-seller__country-name">Germany, berlin</h1>
+                        </div>
+                        <div class="about-seller__verification">
+                            <img src="images/item-detail page/verified.png" alt="">
+                            <h1 class="about-seller__verified">Verified Seller</h1>
+                        </div>
+                        <div class="about-seller__shipping">
+                            <img src="images/item-detail page/world.png" alt="world wide">
+                            <h1 class="about-seller__world-wide">world-wide Shipping</h1>
+                        </div>
+                        <div class="about-seller__inquiry-button">
+                            <button class="about-seller__inq-btn">Send inquiry</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="info-table">
                     <ul class="column-left">
@@ -212,41 +248,45 @@
             <!-- right side info  -->
             <div class="side__info">
                 <h1 class="side__info-title">You may like</h1>
-                <div class="items__may-like">
-                    <div class="side__item-img">
-                        <img src="images/item-detail page/blazer.png" alt="">
+                <div class="items__may-like-container">
+
+                    <div class="items__may-like">
+                        <div class="side__item-img">
+                            <img src="images/item-detail page/blazer.png" alt="">
+                        </div>
+                        <div class="side__item-info">
+                            <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
+                            <p class="side__item-price">$7.00 - $99.50</p>
+                        </div>
                     </div>
-                    <div class="side__item-info">
-                        <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
-                        <p class="side__item-price">$7.00 - $99.50</p>
+                    <div class="items__may-like">
+                        <div class="side__item-img">
+                            <img src="images/item-detail page/jacket khaki.png" alt="">
+                        </div>
+                        <div class="side__item-info">
+                            <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
+                            <p class="side__item-price">$7.00 - $99.50</p>
+                        </div>
                     </div>
-                </div>
-                <div class="items__may-like">
-                    <div class="side__item-img">
-                        <img src="images/item-detail page/jacket khaki.png" alt="">
+                    <div class="items__may-like">
+                        <div class="side__item-img">
+                            <img src="images/item-detail page/T-shirt_blue.png" alt="">
+                        </div>
+                        <div class="side__item-info">
+                            <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
+                            <p class="side__item-price">$7.00 - $99.50</p>
+                        </div>
                     </div>
-                    <div class="side__item-info">
-                        <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
-                        <p class="side__item-price">$7.00 - $99.50</p>
+                    <div class="items__may-like">
+                        <div class="side__item-img">
+                            <img src="images/item-detail page/T-shirt_lblue.png" alt="">
+                        </div>
+                        <div class="side__item-info">
+                            <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
+                            <p class="side__item-price">$7.00 - $99.50</p>
+                        </div>
                     </div>
-                </div>
-                <div class="items__may-like">
-                    <div class="side__item-img">
-                        <img src="images/item-detail page/T-shirt_blue.png" alt="">
-                    </div>
-                    <div class="side__item-info">
-                        <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
-                        <p class="side__item-price">$7.00 - $99.50</p>
-                    </div>
-                </div>
-                <div class="items__may-like">
-                    <div class="side__item-img">
-                        <img src="images/item-detail page/T-shirt_lblue.png" alt="">
-                    </div>
-                    <div class="side__item-info">
-                        <h1 class="side__item-title">Men Blazers Sets Elegant Formal</h1>
-                        <p class="side__item-price">$7.00 - $99.50</p>
-                    </div>
+
                 </div>
             </div>
 

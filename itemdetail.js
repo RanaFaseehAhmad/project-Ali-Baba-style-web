@@ -7,11 +7,14 @@ fetch('header.html').then(res => res.text()).then(data => {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
   console.log("Product ID:", productId);
-  document.getElementById("cartbtn").addEventListener("click", () => {
-  if (productId) {
-    window.location.href = `cart.html?id=${productId}`;
-  }
-});
+  document.querySelectorAll("#button__cartbtn, #cartbtn").forEach(button => {
+    button.addEventListener("click", () => {
+      console.log("clicked")
+      if (productId) {
+        window.location.href = `cart.html?id=${productId}`;
+      }
+    })
+  });
 
   async function fetchProductDetail(id) {
     try {
@@ -36,4 +39,23 @@ fetch('header.html').then(res => res.text()).then(data => {
   if (productId) {
     fetchProductDetail(productId);
   }
+
+  // 
+  const description = document.getElementById("description")
+  const aboutSellerDesc = document.getElementById("about-seller-desc")
+  document.getElementById("about-item-desc").addEventListener("click", () => {
+    description.style.display = "flex"
+    aboutSellerDesc.style.display = "none"
+  })
+  document.getElementById("about-seller-title").addEventListener("click", () => {
+    console.log("clicked")
+    // aboutSellerTitle.style.color = "#0067FF"
+    description.style.display = "none"
+    aboutSellerDesc.style.display = "flex"
+  })
+
+
+
+
+
 });
