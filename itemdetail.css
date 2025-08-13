@@ -933,6 +933,7 @@ i {
         height: auto;
         display: flex;
         flex-wrap: wrap;
+        gap: 10px;
     }
 }
 
@@ -966,6 +967,9 @@ i {
     .info-table {
         max-width: 450px;
         width: 100%;
+    }
+    .recommended__items{
+        padding: 0 10px;
     }
 
     .banner {

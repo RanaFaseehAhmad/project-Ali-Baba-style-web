@@ -31,6 +31,7 @@
 }
 
 .navar__menu-icon {
+    display: none;
     margin-right: 5px;
 }
 
@@ -72,11 +73,21 @@
 .ship__country {
     border: none;
 }
+.country-flag{
+    width: 22px;
+    height: 16px;
+}
 
 .navbar__search-form {
     display: none;
 }
 
+/* @media only screen and (min-width: 625px)and (max-width:1180px) {
+.navar__menu-icon{
+    display: flex;
+}
+
+} */
 @media only screen and (min-width: 625px)and (max-width:768px) {
     .navbar {
         display: none;

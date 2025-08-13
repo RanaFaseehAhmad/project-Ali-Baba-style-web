@@ -13,6 +13,9 @@ fetch('header.html').then(res => res.text()).then(data => {
       if (productId) {
         window.location.href = `cart.html?id=${productId}`;
       }
+      else {
+        alert("please add item first from list page to go to cart")
+      }
     })
   });
 

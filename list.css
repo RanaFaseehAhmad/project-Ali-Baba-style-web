@@ -564,7 +564,7 @@ body::-webkit-scrollbar {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
-        padding: 5px 0;
+        padding: 5px 10px;
     }
 
     .sidebar {
@@ -638,6 +638,9 @@ body::-webkit-scrollbar {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .newsletter-info{
+       padding: 0 5px;
     }
 }
 
